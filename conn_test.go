@@ -881,12 +881,6 @@ func testConnFetchAndCommitOffsets(t *testing.T, conn *Conn) {
 
 	request := offsetFetchRequestV1{
 		GroupID: groupID,
-		Topics: []offsetFetchRequestV1Topic{
-			{
-				Topic:      conn.topic,
-				Partitions: []int32{0},
-			},
-		},
 	}
 	fetch, err := conn.offsetFetch(request)
 	if err != nil {
