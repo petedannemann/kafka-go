@@ -66,7 +66,7 @@ type OffsetFetchPartition struct {
 // OffsetFetch sends an offset fetch request to a kafka broker and returns the
 // response.
 func (c *Client) OffsetFetch(ctx context.Context, req *OffsetFetchRequest) (*OffsetFetchResponse, error) {
-	var topics []string
+	var topics []offsetfetch.RequestTopic
 
 	for topicName, partitions := range req.Topics {
 		indexes := make([]int32, len(partitions))
