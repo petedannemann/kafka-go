@@ -884,7 +884,7 @@ func testConnFetchAndCommitOffsets(t *testing.T, conn *Conn) {
 	}
 	fetch, err := conn.offsetFetch(request)
 	if err != nil {
-		t.Fatalf("bad err: %v, fetch: %v", err, fetch)
+		t.Fatalf("bad err: %v", err)
 	}
 
 	if v := len(fetch.Responses); v != 1 {
